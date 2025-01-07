@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import SinglePlayerGame from './SinglePlayerGame';
 
 // Types
 type GameMode = 'single' | 'multiplayer';
@@ -131,10 +132,10 @@ const BeautyContest = () => {
       {!gameSettings ? (
         <GameSetup onStartGame={handleStartGame} />
       ) : (
-        <div className="text-center">
-          Game will be implemented here
-          {/* We'll add the game component in the next step */}
-        </div>
+        <SinglePlayerGame 
+          settings={gameSettings}
+          onGameEnd={() => setGameSettings(null)}
+        />
       )}
     </div>
   );
